@@ -1,0 +1,12 @@
+<h1 class="title">Editing user</h1>
+
+<div class="container">
+<%= render "form", user: @user %>
+</div>
+
+<br>
+
+<div class="container__actions">
+  <%= link_to "Show this user", @user, class: "button" %>
+  <%= link_to "Back to users", users_path, class: "button" %>
+</div>

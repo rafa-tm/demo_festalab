@@ -1,0 +1,14 @@
+<p class="title"><%= notice %></p>
+
+<div class="container">
+
+  <%= render @user %>
+
+</div>
+<div class="container__actions">
+    <%= link_to "Edit this user", edit_user_path(@user), class: "button" %>
+
+    <%= link_to "Back to users", users_path, class: "button" %>
+
+    <%= button_to "Destroy this user", @user, method: :delete, class: "button"%>
+  </div>

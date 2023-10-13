@@ -1,0 +1,36 @@
+<h1 class="title">Todos os usuários</h1>
+
+<div class="search">
+<%= form_tag(users_path, method: :get) do %>
+  <%= text_field_tag :query, params[:query], placeholder: "Digite um termo de pesquisa", class: "search__imput" %>
+
+  <%= submit_tag "Pesquisar" ,class: "button" %>
+
+<% end %>
+
+<%= link_to "New user", new_user_path ,class: "button" %>
+</div>
+
+
+<table id="users" class="table">
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th>Email</th>
+      <th>Telefone</th>
+      <th>CPF</th>
+      <th>Show more</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user.name %></td>
+        <td><%= user.email %></td>
+        <td><%= user.phone %></td>
+        <td><%= user.cpf %></td>
+        <td><%= link_to "Show this user", user ,class: "button"%></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
